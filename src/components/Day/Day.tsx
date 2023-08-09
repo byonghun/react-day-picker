@@ -19,12 +19,14 @@ export interface DayProps {
 export function Day(props: DayProps): JSX.Element {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dayRender = useDayRender(props.date, props.displayMonth, buttonRef);
+  console.log('hi-test', { dayRender });
 
   if (dayRender.isHidden) {
-    return <div role="gridcell"></div>;
+    return <div role="gridcell">bye</div>;
   }
   if (!dayRender.isButton) {
-    return <div {...dayRender.divProps} />;
+    return <div {...dayRender.divProps}>hi</div>;
   }
-  return <Button name="day" ref={buttonRef} {...dayRender.buttonProps} />;
+  // return <Button name="day" ref={buttonRef} {...dayRender.buttonProps} />;
+  return <div {...dayRender.divProps}>hi</div>;
 }

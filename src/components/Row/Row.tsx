@@ -34,6 +34,7 @@ export function Row(props: RowProps): JSX.Element {
     );
   }
 
+  // JOHN: - this is where the cells need to be styled
   return (
     <tr className={classNames.row} style={styles.row}>
       {weekNumberCell}
@@ -44,7 +45,8 @@ export function Row(props: RowProps): JSX.Element {
           key={getUnixTime(date)}
           role="presentation"
         >
-          <DayComponent displayMonth={props.displayMonth} date={date} />
+          {/* <DayComponent displayMonth={props.displayMonth} date={date} /> */}
+          hi
         </td>
       ))}
     </tr>
